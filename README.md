@@ -1,2 +1,2 @@
-# linux_ricer
-My VIM &amp; General linux setup: Tested on Arch, should work on Arch derivatives
+## Linux setup
+This is all of my macros and configs for the main aspects of my arch linux. 
