@@ -2,9 +2,9 @@
 
 files=(
 	".vimrc" "vimrc"
-	".vim/UltiSnips" "vim/Ultisnips"
-	".config/i3" "config/i3"
-	".config/qutebrowser" "config/qutebrower")
+	".vim/" "vim/UltiSnips"
+	".config/" "config/i3"
+	".config/" "config/qutebrower")
 
 for (( i=0;i<${#files[@]};i+=2 )) do
 	cp -r ${files[$i+1]} $HOME/${files[$i]}
