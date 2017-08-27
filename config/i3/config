@@ -76,7 +76,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-# bindsym $mod+h split h
+bindsym $mod+b split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -126,8 +126,8 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # Function buttons
-bindsym $mod+F1 exec i3lock
-bindsym $mod+F2 exec "sudo systemctl suspend | i3lock"
+bindsym $mod+F1 exec "i3lock -i ~/Pictures/screensaver.png"
+bindsym $mod+F2 exec "sudo systemctl suspend | i3lock -i ~/Pictures/screensaver.png"
 # bindsym F3
 # bindsym F4
 # bindsym F5

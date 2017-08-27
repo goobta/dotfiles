@@ -2,6 +2,7 @@
 
 files=(
 	".vimrc" "vimrc"
+	".bashrc" "bashrc"
 	".vim/" "vim/UltiSnips"
 	".config/" "config/i3"
 	".config/" "config/qutebrowser")

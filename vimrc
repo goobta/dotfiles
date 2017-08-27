@@ -39,6 +39,9 @@ Plugin 'ajh17/VimCompletesMe'
 " Snippets
 Plugin 'SirVer/ultisnips'
 
+" Add Racket Support
+Plugin 'wlangstroth/vim-racket'
+
 " Vundle Closing
 call vundle#end()
 
