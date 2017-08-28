@@ -1,0 +1,32 @@
+snippet ;func;
+;; ${1:Type} -> ${2:Type}
+;; ${3:Purpose}
+(check-expect ($4 ${6:Input}) ${7:Output})
+(check-expect ($4 ${8:Input}) ${9:Output})
+
+;(define ($4 $5) ${11:Output}) ;stub
+
+;(define ($4 $5) ;template
+;    (... $5))
+
+(define (${4:Function} ${5:Inputs}) 
+	($0)
+)
+endsnippet
+
+snippet ;var;
+(define $1 $2)
+$0
+endsnippet
+
+snippet ;if;
+(if ($1)
+	($2)
+	($3)
+)
+$0
+endsnippet
+
+snippet ;and;
+(and ($1) ($2))
+endsnippet

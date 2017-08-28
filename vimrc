@@ -8,11 +8,13 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Vundle Plugins 
+
 " Vundle Base Plugin
 Plugin 'VundleVim/Vundle.vim'
 
 " Theme
-Plugin 'jpo/vim-railscasts-theme'
+" Plugin 'jpo/vim-railscasts-theme'
+Plugin 'pR0Ps/molokai-dark'
 
 " Plugins for bars on the top and the bottom
 Plugin 'vim-airline/vim-airline'
@@ -57,7 +59,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips/"
 let g:UltiSnipsExpandTrigger="<Space><Space>"
 let g:UltiSnipsJumpForwardTrigger="<Space><Space>"
-let g:UltiSnipsJumpBackwardTrigger="<c-.>"
+let g:UltiSnipsJumpBackwardTrigger="<c-_>"
 
 filetype plugin indent on
 
@@ -73,7 +75,9 @@ set softtabstop=4
 
 set encoding=utf-8
 
-colorscheme railscasts
+" Choose color scheme
+" colorscheme railscasts
+colorscheme molokai-dark
 
 " Toggle Nerd Tree to F2
 map <F2> :NERDTreeToggle<CR>
