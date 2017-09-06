@@ -15,6 +15,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Theme
 " Plugin 'jpo/vim-railscasts-theme'
 Plugin 'pR0Ps/molokai-dark'
+" Plugin 'dracula/vim'
 
 " Plugins for bars on the top and the bottom
 Plugin 'vim-airline/vim-airline'
@@ -78,6 +79,7 @@ set encoding=utf-8
 " Choose color scheme
 " colorscheme railscasts
 colorscheme molokai-dark
+" color dracula
 
 " Toggle Nerd Tree to F2
 map <F2> :NERDTreeToggle<CR>
