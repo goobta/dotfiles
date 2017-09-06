@@ -2,9 +2,11 @@
 
 files=(
 	".vimrc" "vimrc"
+	".xbindkeysrc" "xbindkeysrc"
 	".bashrc" "bashrc"
 	".vim/" "vim/UltiSnips"
 	".config/" "config/i3"
+	".config/" "config/keybindings"
 	".config/" "config/qutebrowser")
 
 for (( i=0;i<${#files[@]};i+=2 )) do
