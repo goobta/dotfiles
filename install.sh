@@ -2,6 +2,8 @@
 
 files=(
 	".vimrc" "vimrc"
+	## Only uncomment the one below if you are setting up arch
+	# ".xinitrc" "xinitrc" 
 	".xbindkeysrc" "xbindkeysrc"
 	".bashrc" "bashrc"
 	".vim/" "vim/UltiSnips"

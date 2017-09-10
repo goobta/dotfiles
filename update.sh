@@ -2,6 +2,7 @@
 
 files=(
 	".vimrc" "vimrc"
+	".xinitrc" "xinitrc"
 	".bashrc" "bashrc"
 	".xbindkeysrc" "xbindkeysrc"
 	".vim/UltiSnips" "vim/"
