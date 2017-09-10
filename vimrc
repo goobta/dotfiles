@@ -58,9 +58,9 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=234
 let g:airline#extensions#tabline#enabled = 1
 
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips/"
-let g:UltiSnipsExpandTrigger="<Space><Space>"
-let g:UltiSnipsJumpForwardTrigger="<Space><Space>"
-let g:UltiSnipsJumpBackwardTrigger="<c-_>"
+let g:UltiSnipsExpandTrigger="<c-]>"
+let g:UltiSnipsJumpForwardTrigger="<c-]>"
+let g:UltiSnipsJumpBackwardTrigger="<c-[>"
 
 filetype plugin indent on
 
