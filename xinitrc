@@ -1,3 +1,3 @@
 #!/bin/bash
 xbindkeys
-exec i3
+nvidia-settings --load-config-only & exec i3
