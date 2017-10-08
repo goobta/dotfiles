@@ -74,6 +74,8 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
+set foldcolumn=4
+
 set encoding=utf-8
 
 " Choose color scheme
