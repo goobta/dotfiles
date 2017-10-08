@@ -5,7 +5,7 @@ uname="agupta4@wpi.edu"
 
 # Get the password becuase storing confidential data in plain text is bad for the mind and the soul
 echo Enter password for user $uname
-read pword
+read -s pword
 
 # Parent directory for the files
 parent="/home/agupta/Netdrives/WPI/"
