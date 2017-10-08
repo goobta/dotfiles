@@ -9,6 +9,7 @@ files=(
 	".vim/" "vim/UltiSnips"
 	".config/" "config/i3"
 	".config/" "config/keybindings"
+	".config/" "config/scripts"
 	".config/" "config/qutebrowser")
 
 for (( i=0;i<${#files[@]};i+=2 )) do
