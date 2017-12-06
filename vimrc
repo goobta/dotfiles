@@ -14,8 +14,10 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Theme
 " Plugin 'jpo/vim-railscasts-theme'
-Plugin 'pR0Ps/molokai-dark'
+" Plugin 'pR0Ps/molokai-dark'
 " Plugin 'dracula/vim'
+" Plugin 'junegunn/seoul256.vim'
+" Plugin 'chriskempson/base16-vim'
 
 " Plugins for bars on the top and the bottom
 Plugin 'vim-airline/vim-airline'
@@ -39,11 +41,17 @@ Plugin 'Raimondi/delimitMate'
 " IDE type autocomplete
 Plugin 'ajh17/VimCompletesMe'
 
+" Java autocompletion
+" Plugin 'artur-shaik/vim-javacomplete2'
+
 " Snippets
-Plugin 'SirVer/ultisnips'
+" Plugin 'SirVer/ultisnips'
 
 " Add Racket Support
 Plugin 'wlangstroth/vim-racket'
+
+" Fuzzy File Finder
+Plugin 'kien/ctrlp.vim'
 
 " Vundle Closing
 call vundle#end()
@@ -57,10 +65,10 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=234
 
 let g:airline#extensions#tabline#enabled = 1
 
-let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips/"
-let g:UltiSnipsExpandTrigger="<c-]>"
-let g:UltiSnipsJumpForwardTrigger="<c-]>"
-let g:UltiSnipsJumpBackwardTrigger="<c-[>"
+" let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips/"
+" let g:UltiSnipsExpandTrigger="<c-]>"
+" let g:UltiSnipsJumpForwardTrigger="<c-]>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-[>"
 
 filetype plugin indent on
 
@@ -80,8 +88,11 @@ set encoding=utf-8
 
 " Choose color scheme
 " colorscheme railscasts
-colorscheme molokai-dark
+" colorscheme molokai-dark
+" colorscheme darcula
 " color dracula
+" colo seoul256
+colorscheme default
 
 " Toggle Nerd Tree to F2
 map <F2> :NERDTreeToggle<CR>
