@@ -18,6 +18,9 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugin 'dracula/vim'
 " Plugin 'junegunn/seoul256.vim'
 " Plugin 'chriskempson/base16-vim'
+" Plugin 'ajmwagar/vim-deus'
+" Plugin 'dracula/vim'
+Plugin 'liuchengxu/space-vim-dark'
 
 " Plugins for bars on the top and the bottom
 Plugin 'vim-airline/vim-airline'
@@ -53,8 +56,13 @@ Plugin 'wlangstroth/vim-racket'
 " Fuzzy File Finder
 Plugin 'kien/ctrlp.vim'
 
+" Background Lint Engine
+" Plugin 'w0rp/ale'
+
 " Vundle Closing
 call vundle#end()
+
+autocmd FileType python setlocal foldmethod=indent smartindent shiftwidth=4 ts=4 et cinwords=if,elif,else,for,while,try,except,finally,def,class
 
 let g:NERDTreeDirArrows=0
 
@@ -82,8 +90,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
-set foldcolumn=4
-
+set foldcolumn=6
 set encoding=utf-8
 
 " Choose color scheme
@@ -92,7 +99,15 @@ set encoding=utf-8
 " colorscheme darcula
 " color dracula
 " colo seoul256
-colorscheme default
+" colorscheme default
+" colorscheme ron
+" color dracula
+colorscheme space-vim-dark
+
+"   Range:   233 (darkest) ~ 238 (lightest)
+"   Default: 235
+let g:space_vim_dark_background = 235
+color space-vim-dark
 
 " Toggle Nerd Tree to F2
 map <F2> :NERDTreeToggle<CR>
@@ -109,3 +124,6 @@ map <F10> <C-w>>
 
 " Adding lines when in normal mode
 map <Enter> o<ESC>
+
+" Toggle folds with space bar in normal mode
+nnoremap <space> za
