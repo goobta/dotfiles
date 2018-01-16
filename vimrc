@@ -104,6 +104,9 @@ set foldcolumn=6
 " Fix backspace
 set backspace=indent,eol,start
 
+" Pretty dank cursor column highlighting
+set cursorline
+
 " 'nuff said
 set encoding=utf-8
 
