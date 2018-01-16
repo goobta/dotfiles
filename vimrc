@@ -56,6 +56,9 @@ Plugin 'wlangstroth/vim-racket'
 " Fuzzy File Finder
 Plugin 'kien/ctrlp.vim'
 
+" Autocomplete when searching
+Plugin 'vim-scripts/SearchComplete'
+
 " Background Lint Engine
 " Plugin 'w0rp/ale'
 
@@ -134,5 +137,5 @@ map <Leader>[ s[]<ESC>P
 map <Leader>; s''<ESC>P
 map <Leader>' s""<ESC>P
 map <Leader>, s<><ESC>P
-map <Leader>d c<CR><ESC>O<ESC>p^x$xkgJgJgJ
+map <Leader>d <ESC>`<x`>hx
 
