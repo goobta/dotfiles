@@ -127,3 +127,12 @@ map <Enter> o<ESC>
 
 " Toggle folds with space bar in normal mode
 nnoremap <space> za
+
+" Surround the highlighted string
+map <Leader>9 s()<ESC>P
+map <Leader>[ s[]<ESC>P
+map <Leader>; s''<ESC>P
+map <Leader>' s""<ESC>P
+map <Leader>, s<><ESC>P
+map <Leader>d c<CR><ESC>O<ESC>p^x$xkgJgJgJ
+
