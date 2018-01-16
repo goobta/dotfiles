@@ -138,5 +138,5 @@ map <Leader>[ s[]<ESC>P
 map <Leader>; s''<ESC>P
 map <Leader>' s""<ESC>P
 map <Leader>, s<><ESC>P
-map <Leader>d <ESC>`<x`>hx
+map <Leader>d <ESC>`>x`<x
 
