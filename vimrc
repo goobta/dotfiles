@@ -105,7 +105,10 @@ set foldcolumn=6
 set backspace=indent,eol,start
 
 " Pretty dank cursor column highlighting
-set cursorline
+set cursorcolumn
+
+" Wrap guide at 80 chars
+set colorcolumn=80
 
 " 'nuff said
 set encoding=utf-8
