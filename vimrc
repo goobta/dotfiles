@@ -71,9 +71,9 @@ autocmd FileType python setlocal foldmethod=indent smartindent shiftwidth=4 ts=4
 let g:NERDTreeDirArrows=0
 
 let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=235
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=234
+let g:indent_guides_auto_colors = 1
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=235
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=234
 
 let g:airline#extensions#tabline#enabled = 1
 
@@ -98,6 +98,7 @@ set foldcolumn=6
 set encoding=utf-8
 
 " Choose color scheme
+colorscheme space-vim-dark
 " colorscheme railscasts
 " colorscheme molokai-dark
 " colorscheme darcula
@@ -106,7 +107,6 @@ set encoding=utf-8
 " colorscheme default
 " colorscheme ron
 " color dracula
-colorscheme space-vim-dark
 
 "   Range:   233 (darkest) ~ 238 (lightest)
 "   Default: 235
