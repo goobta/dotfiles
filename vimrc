@@ -66,8 +66,6 @@ Plugin 'vim-scripts/SearchComplete'
 " Vundle Closing
 call vundle#end()
 
-autocmd FileType python setlocal foldmethod=indent smartindent shiftwidth=4 ts=4 et cinwords=if,elif,else,for,while,try,except,finally,def,class
-
 let g:NERDTreeDirArrows=0
 
 let g:indent_guides_enable_on_vim_startup=1
