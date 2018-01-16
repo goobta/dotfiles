@@ -86,16 +86,25 @@ let g:airline#extensions#tabline#enabled = 1
 filetype plugin indent on
 
 " User settings
+" Shows syntax
 syntax on
 
+" Show line numbering
 set number
 set relativenumber
 
+" Dabbing, wait, shit! I mean tabbing!
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
+" Left column width
 set foldcolumn=6
+
+" Fix backspace
+set backspace=indent,eol,start
+
+" 'nuff said
 set encoding=utf-8
 
 " Choose color scheme
