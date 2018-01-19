@@ -155,3 +155,6 @@ map <Leader>' s""<ESC>P
 map <Leader>, s<><ESC>P
 map <Leader>d <ESC>`>x`<x
 
+" Adding support for moving up and down on wrapped lines
+map j gj
+map k gk
