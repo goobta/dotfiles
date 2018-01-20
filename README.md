@@ -15,3 +15,10 @@ consequences!
 * xinitrc
 * termite
 * qutebrowser
+
+## TODO::
+* Create a pacman package list so that I can setup a new computer with one
+command
+* Create a packer package list so that I can setup a new computer with one
+command
+* Create an `install_all_packages.sh`
