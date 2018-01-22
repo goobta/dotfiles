@@ -49,10 +49,10 @@ Plugin 'ajh17/VimCompletesMe'
 " Plugin 'artur-shaik/vim-javacomplete2'
 
 " Snippets
-" Plugin 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
 
 " Add Racket Support
-Plugin 'wlangstroth/vim-racket'
+" Plugin 'wlangstroth/vim-racket'
 
 " Fuzzy File Finder
 Plugin 'kien/ctrlp.vim'
@@ -76,10 +76,12 @@ let g:indent_guides_guide_size=1
 
 let g:airline#extensions#tabline#enabled = 1
 
-" let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips/"
-" let g:UltiSnipsExpandTrigger="<c-]>"
-" let g:UltiSnipsJumpForwardTrigger="<c-]>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-[>"
+let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips/"
+let g:UltiSnipsExpandTrigger="<c-]>"
+let g:UltiSnipsJumpForwardTrigger="<c-]>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsRemoveSelectModeMappings = 0
 
 filetype plugin indent on
 
