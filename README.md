@@ -15,6 +15,35 @@ consequences!
 * xinitrc
 * termite
 * qutebrowser
+* UltiSnips Snippets
+
+## Ultisnip Snipets Documentation
+### LaTeX
+#### ;b;
+Will wrap the inputted text in `\textbf`
+
+#### ;i;
+Will wrap the inputted text in `\textit`
+
+#### ;em;
+Will wrap the inputted text in `\emph`
+
+#### ;u;
+Will wrap the inputted text in `\underline`
+
+#### ;con;
+Will create 
+``` 
+\begin{*inputted text*}
+\end{*inputted text*}
+```
+
+#### ;gentbl{a}x{b};
+Will generate a table of width a and height b
+
+#### ;tr{a};
+Will create a row of dimension a
+
 
 ## TODO::
 * Create a pacman package list so that I can setup a new computer with one
