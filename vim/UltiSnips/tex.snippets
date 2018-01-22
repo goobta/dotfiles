@@ -62,6 +62,39 @@ snippet ;u;
 \underline{$1}$0
 endsnippet
 
+snippet ;frac;
+\frac
+	{$1}
+	{$2}
+$0
+endsnippet
+
+snippet ;ul;
+\begin{itemize}
+	$0
+\end{itemize}
+endsnippet
+
+snippet ;des;
+\begin{description}
+	$0
+\end{description}
+endsnippet
+
+snippet ;enum;
+\begin{enumerate}
+	$0
+\end{enumerate}
+endsnippet
+
+snippet ;li;
+\item $0
+endsnippet
+
+snippet ;nli;
+\item[$1] $0
+endsnippet
+
 pre_expand "create_table(snip)"
 snippet ";gentbl(\d+)x(\d+);" "Generate table of *width* x *height*" r  
 endsnippet
