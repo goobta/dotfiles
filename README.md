@@ -44,6 +44,23 @@ Will generate a table of width a and height b
 #### ;tr{a};
 Will create a row of dimension a
 
+#### ;frac;
+Will create a fraction. Outputs `\frac{}{}` 
+
+#### ;ul;
+Will create a bulleted list
+
+#### ;des;
+Will create a descriptive list
+
+#### ;ol;
+Will create an ordered list (enumeration)
+
+#### ;li;
+Will create a list item
+
+#### ;nli;
+Will create a named list item (`item[] ...`)
 
 ## TODO::
 * Create a pacman package list so that I can setup a new computer with one
