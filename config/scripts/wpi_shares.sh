@@ -11,14 +11,14 @@ read -s pword
 parent="/home/agupta/Netdrives/WPI/"
 
 drives=("academics"
-		"dept"
-		"home"
-		"resources"
-		"scratch_space"
-		"software"
-		)
+    "dept"
+    "home"
+    "resources"
+    "scratch_space"
+    "software"
+    )
 
 for drive in "${drives[@]}"
 do
-	sudo mount -t cifs //storage.wpi.edu/$drive $parent$drive -o user=$uname,password=$pword
+    sudo mount -t cifs //storage.wpi.edu/$drive $parent$drive -o user=$uname,password=$pword,vers=3.0
 done
