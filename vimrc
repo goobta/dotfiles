@@ -63,6 +63,9 @@ Plugin 'vim-scripts/SearchComplete'
 " Background Lint Engine
 " Plugin 'w0rp/ale'
 
+" Openscad Support
+Plugin 'sirtaj/vim-openscad'
+
 " Vundle Closing
 call vundle#end()
 
@@ -108,8 +111,8 @@ set backspace=indent,eol,start
 " Pretty dank cursor column highlighting
 set cursorcolumn
 
-" Wrap guide at 80 chars
-set colorcolumn=80
+" Wrap guide at 92 chars
+set colorcolumn=92
 
 " 'nuff said
 set encoding=utf-8

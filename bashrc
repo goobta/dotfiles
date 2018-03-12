@@ -14,8 +14,10 @@ alias suspend='sudo systemctl suspend | i3lock -i ~/Pictures/screensaver.png'
 alias lambda='ssh -Y agupta@gupta-lambda.dyn.wpi.edu'
 alias elixir='ssh pi@gupta-elixir.dyn.wpi.edu'
 
+alias xterm="termite"
+
 alias wpi_shares='sh ~/.config/scripts/wpi_shares.sh'
 alias wpi_home='cd /home/agupta/Netdrives/WPI/home/My_Documents/'
 
-PS1='[\u@\h \W]\$ '
-source /usr/share/nvm/init-nvm.sh
+# PS1='[\u@\h \W]\$ '
+# source /usr/share/nvm/init-nvm.sh
