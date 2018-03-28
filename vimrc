@@ -1,4 +1,3 @@
-" This is test so
 " VIMRC for Ankur Gupta
 
 " Vundle Init
@@ -68,6 +67,9 @@ Plugin 'sirtaj/vim-openscad'
 
 " Async Code Execution
 " Plugin 'skywind3000/asyncrun.vim'
+
+" Grammar checking
+Plugin 'rhysd/vim-grammarous'
 
 " Vundle Closing
 call vundle#end()
@@ -171,6 +173,10 @@ map <Leader>d <ESC>`>x`<x
 map j gj
 map k gk
 
+" Enable spell check on certain file types
+autocmd FileType markdown setlocal spell spelllang=en_us
+autocmd FileType tex setlocal spell spelllang=en_us
+
 " Bind F5 to save file if modified and execute python script in a buffer.
 " Tooken from https://stackoverflow.com/questions/18948491/running-python-code-in-vim
 " ^ Thanks my dude!
@@ -178,7 +184,8 @@ nnoremap <silent> <F5> :call SaveAndExecutePython()<CR>
 vnoremap <silent> <F5> :<C-u>call SaveAndExecutePython()<CR>
 
 function! SaveAndExecutePython()
-    " SOURCE [reusable window]: https://github.com/fatih/vim-go/blob/master/autoload/go/ui.vim
+    " SOURCE [reusable window]: 
+    " https://github.com/fatih/vim-go/blob/master/autoload/go/ui.vim
 
     " save and reload current file
     silent execute "update | edit"
