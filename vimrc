@@ -99,6 +99,10 @@ syntax on
 set number
 set relativenumber
 
+" Soft wrapping
+set wrap
+set linebreak
+
 " Dabbing, wait, shit! I mean tabbing!
 set expandtab
 set tabstop=4
