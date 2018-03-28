@@ -20,7 +20,12 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugin 'chriskempson/base16-vim'
 " Plugin 'ajmwagar/vim-deus'
 " Plugin 'dracula/vim'
-Plugin 'liuchengxu/space-vim-dark'
+" Plugin 'liuchengxu/space-vim-dark'
+" Plugin 'danilo-augusto/vim-afterglow'
+" Plugin 'nightsense/carbonized'
+" Plugin 'challenger-deep-theme/vim'
+" Plugin 'w0ng/vim-hybrid'
+Plugin 'morhetz/gruvbox'
 
 " Plugins for bars on the top and the bottom
 Plugin 'vim-airline/vim-airline'
@@ -76,6 +81,12 @@ call vundle#end()
 
 let g:NERDTreeDirArrows=0
 
+" Bind grammar window to control - g
+nmap <C-g> <Plug>(grammarous-open-info-window)
+
+" Use vim spell check
+let g:grammarous#use_vim_spelllang = 1
+
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_auto_colors = 1
 let g:indent_guides_guide_size=1
@@ -126,8 +137,14 @@ set colorcolumn=92
 " 'nuff said
 set encoding=utf-8
 
+if has('nvim') || has('termguicolors')
+  set termguicolors
+endif
+
 " Choose color scheme
-colorscheme space-vim-dark
+set background=dark
+colorscheme gruvbox
+" colorscheme space-vim-dark
 " colorscheme railscasts
 " colorscheme molokai-dark
 " colorscheme darcula
@@ -139,8 +156,8 @@ colorscheme space-vim-dark
 
 "   Range:   233 (darkest) ~ 238 (lightest)
 "   Default: 235
-let g:space_vim_dark_background = 235
-color space-vim-dark
+" let g:space_vim_dark_background = 235
+" color space-vim-dark
 
 " Toggle Nerd Tree to F2
 map <F2> :NERDTreeToggle<CR>
