@@ -4,6 +4,7 @@ files=(
     ".vimrc" "vimrc"
     ".vim/" "vim/UltiSnips/"
     ".xinitrc" "xinitrc"
+    ".tmux.conf" "tmux.conf"
     ".bashrc" "bashrc"
     ".xbindkeysrc" "xbindkeysrc"
     ".config/" "config/i3/"
