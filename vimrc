@@ -38,7 +38,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 
 " Guides for Indents
-Plugin 'nathanaelkane/vim-indent-guides'
+" Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Yggdroot/indentLine'
 
 " Display marks in the gutter 
 Plugin 'kshenoy/vim-signature'
@@ -49,14 +50,8 @@ Plugin 'Raimondi/delimitMate'
 " IDE type autocomplete
 Plugin 'ajh17/VimCompletesMe'
 
-" Java autocompletion
-" Plugin 'artur-shaik/vim-javacomplete2'
-
 " Snippets
 Plugin 'SirVer/ultisnips'
-
-" Add Racket Support
-" Plugin 'wlangstroth/vim-racket'
 
 " Fuzzy File Finder
 Plugin 'kien/ctrlp.vim'
@@ -64,14 +59,11 @@ Plugin 'kien/ctrlp.vim'
 " Autocomplete when searching
 Plugin 'vim-scripts/SearchComplete'
 
-" Background Lint Engine
-" Plugin 'w0rp/ale'
-
 " Openscad Support
 Plugin 'sirtaj/vim-openscad'
 
 " Async Code Execution
-" Plugin 'skywind3000/asyncrun.vim'
+Plugin 'skywind3000/asyncrun.vim'
 
 " Grammar checking
 Plugin 'rhysd/vim-grammarous'
@@ -87,12 +79,6 @@ nmap <C-g> <Plug>(grammarous-open-info-window)
 " Use vim spell check
 let g:grammarous#use_vim_spelllang = 1
 
-let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_auto_colors = 1
-let g:indent_guides_guide_size=1
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=235
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=234
-
 let g:airline#extensions#tabline#enabled = 1
 
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips/"
@@ -104,7 +90,8 @@ let g:UltiSnipsRemoveSelectModeMappings = 0
 
 filetype plugin indent on
 
-" User settings
+" ---- User settings ----
+"
 " Shows syntax
 syntax on
 
