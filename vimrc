@@ -68,6 +68,9 @@ Plugin 'skywind3000/asyncrun.vim'
 " Grammar checking
 Plugin 'rhysd/vim-grammarous'
 
+" LaTeX Live Preview
+Plugin 'xuhdev/vim-latex-live-preview'
+
 " Vundle Closing
 call vundle#end()
 
@@ -78,6 +81,12 @@ nmap <C-g> <Plug>(grammarous-open-info-window)
 
 " Use vim spell check
 let g:grammarous#use_vim_spelllang = 1
+
+" Change PDF viewer to zathura
+let g:livepreview_previewer = 'zathura'
+
+" Change updates to 500 ms
+set updatetime=500
 
 let g:airline#extensions#tabline#enabled = 1
 
