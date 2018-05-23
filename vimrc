@@ -49,6 +49,9 @@ Plugin 'Raimondi/delimitMate'
 
 " IDE type autocomplete
 Plugin 'ajh17/VimCompletesMe'
+" Plugin 'Shougo/deoplete.nvim'
+" Plugin 'roxma/nvim-yarp'
+" Plugin 'roxma/vim-hug-neovim-rpc'
 
 " Snippets
 Plugin 'SirVer/ultisnips'
@@ -71,10 +74,38 @@ Plugin 'rhysd/vim-grammarous'
 " LaTeX Live Preview
 Plugin 'xuhdev/vim-latex-live-preview'
 
+" Scala support
+Plugin 'derekwyatt/vim-scala'
+
+" Easy surroundings modifications
+Plugin 'tpope/vim-surround'
+
+" Show git diffs in the gutter
+Plugin 'mhinz/vim-signify'
+
+" Even more efficient vim motions
+Plugin 'easymotion/vim-easymotion'
+
+" Differnet colors on parentheses to make them ook better
+Plugin 'kien/rainbow_parentheses.vim'
+
 " Vundle Closing
 call vundle#end()
 
+" ---- Plugin Settings
+
+" ++ NERD Tree settings
+" Disable NERD Tree arrows
 let g:NERDTreeDirArrows=0
+
+" Set F2 to open NERD Tree
+" Set F3 to find the currently opened file 
+" Set F4 to peek at a file
+silent! map <F2> :NERDTreeToggle<CR>
+silent! map <F3> :NERDTreeFind<CR>
+let g:NERDTreeToggle="<F2>"
+let g:NERDTreeMapActivateNode="<F3>"
+let g:NERDTreeMapPreview="<F4>"
 
 " Bind grammar window to control - g
 nmap <C-g> <Plug>(grammarous-open-info-window)
@@ -97,10 +128,27 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsRemoveSelectModeMappings = 0
 
+" Deoplete initial setup
+" let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_smart_case = 1
+
+" Disable the candidates in Comment/String syntaxes.
+" call deoplete#custom#source('_', \ 'disabled_syntaxes', ['Comment', 'String'])
+" autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
+" set sources
+" let g:deoplete#sources = {}
+" let g:deoplete#sources.cpp = ['LanguageClient']
+" let g:deoplete#sources.python = ['LanguageClient']
+" let g:deoplete#sources.python3 = ['LanguageClient']
+" let g:deoplete#sources.rust = ['LanguageClient']
+" let g:deoplete#sources.c = ['LanguageClient']
+" let g:deoplete#sources.vim = ['vim']
+
 filetype plugin indent on
 
 " ---- User settings ----
-"
+
 " Shows syntax
 syntax on
 
@@ -111,6 +159,7 @@ set relativenumber
 " Soft wrapping
 set wrap
 set linebreak
+
 
 " Dabbing, wait, shit! I mean tabbing!
 set expandtab
@@ -154,9 +203,6 @@ colorscheme gruvbox
 "   Default: 235
 " let g:space_vim_dark_background = 235
 " color space-vim-dark
-
-" Toggle Nerd Tree to F2
-map <F2> :NERDTreeToggle<CR>
 
 " Macros for windowed mode
 map <C-h> <C-w>h
