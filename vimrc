@@ -57,7 +57,9 @@ Plugin 'ajh17/VimCompletesMe'
 Plugin 'SirVer/ultisnips'
 
 " Fuzzy File Finder
-Plugin 'kien/ctrlp.vim'
+" Plugin 'kien/ctrlp.vim'
+" Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'wincent/command-t'
 
 " Autocomplete when searching
 Plugin 'vim-scripts/SearchComplete'
@@ -72,7 +74,7 @@ Plugin 'skywind3000/asyncrun.vim'
 Plugin 'rhysd/vim-grammarous'
 
 " LaTeX Live Preview
-Plugin 'xuhdev/vim-latex-live-preview'
+" Plugin 'xuhdev/vim-latex-live-preview'
 
 " Scala support
 Plugin 'derekwyatt/vim-scala'
@@ -88,6 +90,12 @@ Plugin 'easymotion/vim-easymotion'
 
 " Differnet colors on parentheses to make them ook better
 Plugin 'kien/rainbow_parentheses.vim'
+
+" Dockerfile support
+Plugin 'ekalinin/Dockerfile.vim'
+
+" Tag support
+Plugin 'majutsushi/tagbar'
 
 " Vundle Closing
 call vundle#end()
@@ -137,13 +145,17 @@ let g:UltiSnipsRemoveSelectModeMappings = 0
 " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " set sources
-" let g:deoplete#sources = {}
-" let g:deoplete#sources.cpp = ['LanguageClient']
-" let g:deoplete#sources.python = ['LanguageClient']
-" let g:deoplete#sources.python3 = ['LanguageClient']
-" let g:deoplete#sources.rust = ['LanguageClient']
-" let g:deoplete#sources.c = ['LanguageClient']
-" let g:deoplete#sources.vim = ['vim']
+let g:deoplete#sources = {}
+let g:deoplete#sources.cpp = ['LanguageClient']
+let g:deoplete#sources.python = ['LanguageClient']
+let g:deoplete#sources.python3 = ['LanguageClient']
+let g:deoplete#sources.rust = ['LanguageClient']
+let g:deoplete#sources.c = ['LanguageClient']
+let g:deoplete#sources.vim = ['vim']
+
+" if &term =~ "xterm" || &term =~ "screen"
+"     let g:CommandTCancelMap = ['<ESC>', '<C-c>']
+" endif
 
 filetype plugin indent on
 
