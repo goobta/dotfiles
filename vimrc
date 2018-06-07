@@ -58,8 +58,12 @@ Plugin 'SirVer/ultisnips'
 
 " Fuzzy File Finder
 " Plugin 'kien/ctrlp.vim'
-" Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plugin 'wincent/command-t'
+" Plugin 'wincent/command-t'
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
+
+" Advanced search
+Plugin 'wincent/ferret'
 
 " Autocomplete when searching
 Plugin 'vim-scripts/SearchComplete'
@@ -101,6 +105,21 @@ Plugin 'majutsushi/tagbar'
 call vundle#end()
 
 " ---- Plugin Settings
+
+" Custom fzf commands
+" --column: Show column number
+" --line-number: Show line number
+" --no-heading: Do not show file headings in results
+" --fixed-strings: Search term as a literal string
+" --ignore-case: Case insensitive search
+" --no-ignore: Do not respect .gitignore, etc...
+" --hidden: Search hidden files and folders
+" --follow: Follow symlinks
+" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+" --color: Search color options
+command! -bang -nargs=* RG call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --glob "!*.log" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 
 " ++ NERD Tree settings
 " Disable NERD Tree arrows
@@ -145,13 +164,13 @@ let g:UltiSnipsRemoveSelectModeMappings = 0
 " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " set sources
-let g:deoplete#sources = {}
-let g:deoplete#sources.cpp = ['LanguageClient']
-let g:deoplete#sources.python = ['LanguageClient']
-let g:deoplete#sources.python3 = ['LanguageClient']
-let g:deoplete#sources.rust = ['LanguageClient']
-let g:deoplete#sources.c = ['LanguageClient']
-let g:deoplete#sources.vim = ['vim']
+" let g:deoplete#sources = {}
+" let g:deoplete#sources.cpp = ['LanguageClient']
+" let g:deoplete#sources.python = ['LanguageClient']
+" let g:deoplete#sources.python3 = ['LanguageClient']
+" let g:deoplete#sources.rust = ['LanguageClient']
+" let g:deoplete#sources.c = ['LanguageClient']
+" let g:deoplete#sources.vim = ['vim']
 
 " if &term =~ "xterm" || &term =~ "screen"
 "     let g:CommandTCancelMap = ['<ESC>', '<C-c>']
@@ -172,6 +191,12 @@ set relativenumber
 set wrap
 set linebreak
 
+" Highlight seraches by default
+set hls
+
+" Make searching case insensitive by default
+set ignorecase
+set smartcase
 
 " Dabbing, wait, shit! I mean tabbing!
 set expandtab
