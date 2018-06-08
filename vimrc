@@ -27,6 +27,9 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugin 'w0ng/vim-hybrid'
 Plugin 'morhetz/gruvbox'
 
+" Support for TradingView's PINE script
+Plugin 'jbmorgado/vim-pine-script'
+
 " Plugins for bars on the top and the bottom
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -49,9 +52,6 @@ Plugin 'Raimondi/delimitMate'
 
 " IDE type autocomplete
 Plugin 'ajh17/VimCompletesMe'
-" Plugin 'Shougo/deoplete.nvim'
-" Plugin 'roxma/nvim-yarp'
-" Plugin 'roxma/vim-hug-neovim-rpc'
 
 " Snippets
 Plugin 'SirVer/ultisnips'
@@ -78,7 +78,7 @@ Plugin 'skywind3000/asyncrun.vim'
 Plugin 'rhysd/vim-grammarous'
 
 " LaTeX Live Preview
-" Plugin 'xuhdev/vim-latex-live-preview'
+Plugin 'xuhdev/vim-latex-live-preview'
 
 " Scala support
 Plugin 'derekwyatt/vim-scala'
