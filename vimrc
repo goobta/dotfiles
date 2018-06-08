@@ -216,8 +216,10 @@ set backspace=indent,eol,start
 " Pretty dank cursor column highlighting
 set cursorcolumn
 
-" Wrap guide at 92 chars
-set colorcolumn=92
+" Wrap guide at 80 chars... psych! Welcome to the modern age, where we can now afford a whopping 100
+" chars!. However, diffs are nice to see side by side, so the limit has just been bumped up.
+set colorcolumn=100
+set tw=100
 
 " 'nuff said
 set encoding=utf-8
