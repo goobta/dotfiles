@@ -221,6 +221,9 @@ set cursorcolumn
 set colorcolumn=100
 set tw=100
 
+" Forgive me lord, for I have become a pleb
+set mouse=a
+
 " 'nuff said
 set encoding=utf-8
 
