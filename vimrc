@@ -194,6 +194,9 @@ set linebreak
 " Highlight seraches by default
 set hls
 
+" Add incremental search
+set incsearch
+
 " Make searching case insensitive by default
 set ignorecase
 set smartcase
