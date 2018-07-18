@@ -101,6 +101,9 @@ Plugin 'ekalinin/Dockerfile.vim'
 " Tag support
 Plugin 'majutsushi/tagbar'
 
+" Vertical Alignment
+Plugin 'godlygeek/tabular'
+
 " Vundle Closing
 call vundle#end()
 
@@ -155,6 +158,11 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsRemoveSelectModeMappings = 0
 
+" Enable leading spaces
+let g:indentLine_concealcursor = ''
+let g:indentLine_leadingSpaceEnabled=1
+let g:indentLine_leadingSpaceChar='·'
+
 " Deoplete initial setup
 " let g:deoplete#enable_at_startup = 1
 " let g:deoplete#enable_smart_case = 1
@@ -202,10 +210,9 @@ set ignorecase
 set smartcase
 
 " Dabbing, wait, shit! I mean tabbing!
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 
 " Left column width
 set foldcolumn=6
@@ -223,6 +230,9 @@ set tw=100
 
 " Forgive me lord, for I have become a pleb
 set mouse=a
+
+" Conceal settings for doers, not lookers
+set concealcursor=""
 
 " 'nuff said
 set encoding=utf-8
