@@ -276,3 +276,9 @@ autocmd FileType tex setlocal spell spelllang=en_us
 
 " Add Google Apps script support
 autocmd BufNewFile,BufRead *.gs set filetype=javascript
+
+" Regulation tabbing for python
+autocmd FileType python set tabstop=4
+autocmd FileType python set shiftwidth=4
+autocmd FileType python set softtabstop=4
+
