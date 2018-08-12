@@ -193,10 +193,9 @@ set ignorecase
 set smartcase
 
 " Dabbing, wait, shit! I mean tabbing!
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 
 " Left column width
 set foldcolumn=6
@@ -274,3 +273,6 @@ map k gk
 " Enable spell check on certain file types
 autocmd FileType markdown setlocal spell spelllang=en_us
 autocmd FileType tex setlocal spell spelllang=en_us
+
+" Add Google Apps script support
+autocmd BufNewFile,BufRead *.gs set filetype=javascript
