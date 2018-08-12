@@ -104,6 +104,12 @@ Plugin 'majutsushi/tagbar'
 " Vertical Alignment
 Plugin 'godlygeek/tabular'
 
+" Linter
+Plugin 'w0rp/ale'
+
+" Python autocompletion
+Plugin 'davidhalter/jedi-vim'
+
 " Vundle Closing
 call vundle#end()
 
@@ -137,6 +143,9 @@ let g:NERDTreeToggle="<F2>"
 let g:NERDTreeMapActivateNode="<F3>"
 let g:NERDTreeMapPreview="<F4>"
 
+" ALE settings
+let b:ale_linters = ['flake8, pylint']
+
 " Bind grammar window to control - g
 nmap <C-g> <Plug>(grammarous-open-info-window)
 
@@ -157,32 +166,6 @@ let g:UltiSnipsJumpForwardTrigger="<c-]>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsRemoveSelectModeMappings = 0
-
-" Enable leading spaces
-let g:indentLine_concealcursor = ''
-let g:indentLine_leadingSpaceEnabled=1
-let g:indentLine_leadingSpaceChar='·'
-
-" Deoplete initial setup
-" let g:deoplete#enable_at_startup = 1
-" let g:deoplete#enable_smart_case = 1
-
-" Disable the candidates in Comment/String syntaxes.
-" call deoplete#custom#source('_', \ 'disabled_syntaxes', ['Comment', 'String'])
-" autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
-" set sources
-" let g:deoplete#sources = {}
-" let g:deoplete#sources.cpp = ['LanguageClient']
-" let g:deoplete#sources.python = ['LanguageClient']
-" let g:deoplete#sources.python3 = ['LanguageClient']
-" let g:deoplete#sources.rust = ['LanguageClient']
-" let g:deoplete#sources.c = ['LanguageClient']
-" let g:deoplete#sources.vim = ['vim']
-
-" if &term =~ "xterm" || &term =~ "screen"
-"     let g:CommandTCancelMap = ['<ESC>', '<C-c>']
-" endif
 
 filetype plugin indent on
 
@@ -210,9 +193,10 @@ set ignorecase
 set smartcase
 
 " Dabbing, wait, shit! I mean tabbing!
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 
 " Left column width
 set foldcolumn=6
@@ -290,92 +274,3 @@ map k gk
 " Enable spell check on certain file types
 autocmd FileType markdown setlocal spell spelllang=en_us
 autocmd FileType tex setlocal spell spelllang=en_us
-
-" Bind F5 to save file if modified and execute python script in a buffer.
-" Tooken from https://stackoverflow.com/questions/18948491/running-python-code-in-vim
-" ^ Thanks my dude!
-nnoremap <silent> <F5> :call SaveAndExecutePython()<CR>
-vnoremap <silent> <F5> :<C-u>call SaveAndExecutePython()<CR>
-
-function! SaveAndExecutePython()
-    " SOURCE [reusable window]: 
-    " https://github.com/fatih/vim-go/blob/master/autoload/go/ui.vim
-
-    " save and reload current file
-    silent execute "update | edit"
-
-    " get file path of current file
-    let s:current_buffer_file_path = expand("%")
-
-    let s:output_buffer_name = "Python"
-    let s:output_buffer_filetype = "output"
-
-    " reuse existing buffer window if it exists otherwise create a new one
-    if !exists("s:buf_nr") || !bufexists(s:buf_nr)
-        silent execute 'botright new ' . s:output_buffer_name
-        let s:buf_nr = bufnr('%')
-    elseif bufwinnr(s:buf_nr) == -1
-        silent execute 'botright new'
-        silent execute s:buf_nr . 'buffer'
-    elseif bufwinnr(s:buf_nr) != bufwinnr('%')
-        silent execute bufwinnr(s:buf_nr) . 'wincmd w'
-    endif
-
-    silent execute "setlocal filetype=" . s:output_buffer_filetype
-    setlocal bufhidden=delete
-    setlocal buftype=nofile
-    setlocal noswapfile
-    setlocal nobuflisted
-    setlocal winfixheight
-    setlocal cursorline " make it easy to distinguish
-    setlocal nonumber
-    setlocal norelativenumber
-    setlocal showbreak=""
-
-    " clear the buffer
-    setlocal noreadonly
-    setlocal modifiable
-    %delete _
-
-    " add the console output
-    silent execute ".!time python " . shellescape(s:current_buffer_file_path, 1)
-
-    " resize window to content length
-    " Note: This is annoying because if you print a lot of lines then your code buffer is
-    "   forced to a height of one line every time you run this function.
-    " However without this line the buffer starts off as a default size and if you
-    "   resize the buffer then it keeps that custom size after repeated runs of this
-    "   function.
-    "   But if you close the output buffer then it returns to using the default size
-    "   when its recreated
-    " execute 'resize' . line('$')
-
-    " make the buffer non modifiable
-    setlocal readonly
-    setlocal nomodifiable
-endfunction
-
-" Time the executive time via <F4>
-" http://liuchengxu.org/posts/use-vim-as-a-python-ide/
-" nnoremap <F4> :call <SID>compile_and_run()<CR>
-
-" augroup SPACEVIM_ASYNCRUN
-"     autocmd!
-"     " Automatically open the quickfix window
-"     autocmd User AsyncRunStart call asyncrun#quickfix_toggle(15, 1)
-" augroup END
-" 
-" function! s:compile_and_run()
-"     exec 'w'
-"     if &filetype == 'c'
-"         exec "AsyncRun! gcc % -o %<; time ./%<"
-"     elseif &filetype == 'cpp'
-"        exec "AsyncRun! g++ -std=c++11 % -o %<; time ./%<"
-"     elseif &filetype == 'java'
-"        exec "AsyncRun! javac %; time java %<"
-"     elseif &filetype == 'sh'
-"        exec "AsyncRun! time bash %"
-"     elseif &filetype == 'python'
-"        exec "AsyncRun! time python %"
-"     endif
-" endfunction
