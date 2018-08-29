@@ -1,3 +1,1 @@
-#!/bin/bash
-xbindkeys
-nvidia-settings --load-config-only & exec i3
+[[ -f ~/.Xdefaults ]] && xrdb -merge ~/.Xdefaults

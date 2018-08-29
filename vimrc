@@ -25,7 +25,8 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugin 'nightsense/carbonized'
 " Plugin 'challenger-deep-theme/vim'
 " Plugin 'w0ng/vim-hybrid'
-Plugin 'morhetz/gruvbox'
+" Plugin 'morhetz/gruvbox'
+Plugin 'chriskempson/base16-vim'
 
 " Support for TradingView's PINE script
 Plugin 'jbmorgado/vim-pine-script'
@@ -208,8 +209,8 @@ set cursorcolumn
 
 " Wrap guide at 80 chars... psych! Welcome to the modern age, where we can now afford a whopping 100
 " chars!. However, diffs are nice to see side by side, so the limit has just been bumped up.
-set colorcolumn=100
-set tw=100
+set colorcolumn=80
+set tw=80
 
 " Forgive me lord, for I have become a pleb
 set mouse=a
@@ -225,8 +226,8 @@ if has('nvim') || has('termguicolors')
 endif
 
 " Choose color scheme
-set background=dark
-colorscheme gruvbox
+" set background=dark
+" colorscheme gruvbox
 " colorscheme space-vim-dark
 " colorscheme railscasts
 " colorscheme molokai-dark
@@ -236,6 +237,7 @@ colorscheme gruvbox
 " colorscheme default
 " colorscheme ron
 " color dracula
+colorscheme base16-default-dark
 
 "   Range:   233 (darkest) ~ 238 (lightest)
 "   Default: 235
