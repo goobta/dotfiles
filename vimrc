@@ -26,7 +26,8 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugin 'challenger-deep-theme/vim'
 " Plugin 'w0ng/vim-hybrid'
 " Plugin 'morhetz/gruvbox'
-Plugin 'chriskempson/base16-vim'
+" Plugin 'chriskempson/base16-vim'
+Plugin 'drewtempelmeyer/palenight.vim'
 
 " Support for TradingView's PINE script
 Plugin 'jbmorgado/vim-pine-script'
@@ -109,7 +110,10 @@ Plugin 'godlygeek/tabular'
 Plugin 'w0rp/ale'
 
 " Python autocompletion
-Plugin 'davidhalter/jedi-vim'
+" Plugin 'davidhalter/jedi-vim'
+
+" Doxygen Toolkit
+Plugin 'vim-scripts/DoxygenToolkit.vim'
 
 " Vundle Closing
 call vundle#end()
@@ -145,7 +149,7 @@ let g:NERDTreeMapActivateNode="<F3>"
 let g:NERDTreeMapPreview="<F4>"
 
 " ALE settings
-let b:ale_linters = ['flake8, pylint']
+let b:ale_linters = ['flake8, pylint', 'gcc']
 
 " Bind grammar window to control - g
 nmap <C-g> <Plug>(grammarous-open-info-window)
@@ -226,7 +230,8 @@ if has('nvim') || has('termguicolors')
 endif
 
 " Choose color scheme
-" set background=dark
+set background=dark
+colorscheme palenight
 " colorscheme gruvbox
 " colorscheme space-vim-dark
 " colorscheme railscasts
@@ -237,12 +242,14 @@ endif
 " colorscheme default
 " colorscheme ron
 " color dracula
-colorscheme base16-default-dark
+" colorscheme base16-default-dark
 
 "   Range:   233 (darkest) ~ 238 (lightest)
 "   Default: 235
 " let g:space_vim_dark_background = 235
 " color space-vim-dark
+
+let g:palenight_terminal_italics=1
 
 " Macros for windowed mode
 map <C-h> <C-w>h
