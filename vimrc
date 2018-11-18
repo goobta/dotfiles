@@ -29,9 +29,6 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugin 'chriskempson/base16-vim'
 Plugin 'drewtempelmeyer/palenight.vim'
 
-" Support for TradingView's PINE script
-Plugin 'jbmorgado/vim-pine-script'
-
 " Plugins for bars on the top and the bottom
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -56,7 +53,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'ajh17/VimCompletesMe'
 
 " Snippets
-Plugin 'SirVer/ultisnips'
+" Plugin 'SirVer/ultisnips'
 
 " Fuzzy File Finder
 " Plugin 'kien/ctrlp.vim'
@@ -95,7 +92,7 @@ Plugin 'mhinz/vim-signify'
 Plugin 'easymotion/vim-easymotion'
 
 " Differnet colors on parentheses to make them ook better
-Plugin 'kien/rainbow_parentheses.vim'
+" Plugin 'kien/rainbow_parentheses.vim'
 
 " Dockerfile support
 Plugin 'ekalinin/Dockerfile.vim'
@@ -165,12 +162,12 @@ set updatetime=500
 
 let g:airline#extensions#tabline#enabled = 1
 
-let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips/"
-let g:UltiSnipsExpandTrigger="<c-]>"
-let g:UltiSnipsJumpForwardTrigger="<c-]>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsRemoveSelectModeMappings = 0
+" let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips/"
+" let g:UltiSnipsExpandTrigger="<c-]>"
+" let g:UltiSnipsJumpForwardTrigger="<c-]>"
+" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" let g:UltiSnipsEditSplit="vertical"
+" let g:UltiSnipsRemoveSelectModeMappings = 0
 
 filetype plugin indent on
 
@@ -279,9 +276,12 @@ map <Leader>d <ESC>`>x`<x
 map j gj
 map k gk
 
-" Enable spell check on certain file types
+" File specific commands
 autocmd FileType markdown setlocal spell spelllang=en_us
+autocmd FileType markdown setlocal concealcursor=" "
+
 autocmd FileType tex setlocal spell spelllang=en_us
+autocmd FileType tex setlocal concealcursor=" "
 
 " Add Google Apps script support
 autocmd BufNewFile,BufRead *.gs set filetype=javascript
@@ -290,4 +290,3 @@ autocmd BufNewFile,BufRead *.gs set filetype=javascript
 autocmd FileType python set tabstop=4
 autocmd FileType python set shiftwidth=4
 autocmd FileType python set softtabstop=4
-
