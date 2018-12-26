@@ -104,7 +104,13 @@
 (evil-define-key 'normal 'global
   ; Enter in normal mode will create a new line
   (kbd "RET") (kbd "o <escape>")
+  ; Easy window switching
   (kbd "M-h") 'evil-window-left
   (kbd "M-j") 'evil-window-down
   (kbd "M-k") 'evil-window-up
-  (kbd "M-l") 'evil-window-right)
+  (kbd "M-l") 'evil-window-right
+  ; Window Moving
+  (kbd "M-H") 'evil-window-move-far-left
+  (kbd "M-J") 'evil-window-move-very-bottom
+  (kbd "M-K") 'evil-window-move-very-top
+  (kbd "M-L") 'evil-window-move-far-right)
