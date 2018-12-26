@@ -86,6 +86,7 @@
 (show-paren-mode 1)                               ; highlight matching paren
 (menu-bar-mode -1)                                ; disable menu bar
 (tool-bar-mode -1)                                ; disable tool bar
+(ac-config-default)                               ; enable autocomplete
 
 ; Relative line numberings
 (nlinum-relative-setup-evil)                      ; setup for evil
@@ -94,8 +95,8 @@
 (setq nlinum-relative-current-symbol "")          ; display current line number
 (setq nlinum-relative-offset 0)                   ; disable line offset
 
+(load-theme 'dracula t)                           ; colorscheme
 
-(load-theme 'dracula t)
 
 ;; ---------------------
 ;; Keybindings
