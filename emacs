@@ -102,4 +102,9 @@
 ;; ---------------------
 
 (evil-define-key 'normal 'global
-  (kbd "RET") (kbd "o <escape>"))
+  ; Enter in normal mode will create a new line
+  (kbd "RET") (kbd "o <escape>")
+  (kbd "M-h") 'evil-window-left
+  (kbd "M-j") 'evil-window-down
+  (kbd "M-k") 'evil-window-up
+  (kbd "M-l") 'evil-window-right)
