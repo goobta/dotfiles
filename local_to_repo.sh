@@ -11,6 +11,7 @@ files=(
     ".config/keybindings" "config/"
     ".config/scripts" "config/"
     ".config/qutebrowser" "config/"
+		".emacs" "emacs"
 )
 
 
