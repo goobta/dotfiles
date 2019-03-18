@@ -53,6 +53,7 @@
     nlinum-relative    ; Relative line numbersj
     auto-complete      ; Auto complete
     dracula-theme      ; Theming
+    org                ; Org Mode
     tramp)             ; Remote file editing
   "The packages that will be installed on launch")
 
@@ -96,6 +97,8 @@
 (setq nlinum-relative-offset 0)                   ; disable line offset
 
 (load-theme 'dracula t)                           ; colorscheme
+
+(server-start)                                    ; start the server
 
 
 ;; ---------------------

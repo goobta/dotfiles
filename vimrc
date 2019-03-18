@@ -33,9 +33,6 @@ Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-" Basic git integration
-Plugin 'tpope/vim-fugitive'
-
 " File viewer
 Plugin 'scrooloose/nerdtree'
 
@@ -74,7 +71,7 @@ Plugin 'sirtaj/vim-openscad'
 Plugin 'skywind3000/asyncrun.vim'
 
 " Grammar checking
-Plugin 'rhysd/vim-grammarous'
+" Plugin 'rhysd/vim-grammarous'
 
 " LaTeX Live Preview
 Plugin 'xuhdev/vim-latex-live-preview'
@@ -111,6 +108,8 @@ Plugin 'w0rp/ale'
 
 " Doxygen Toolkit
 Plugin 'vim-scripts/DoxygenToolkit.vim'
+
+Plugin 'posva/vim-vue'
 
 " Vundle Closing
 call vundle#end()

@@ -9,22 +9,22 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-exec --no-startup-id "xfce4-panel --disable-wm-check"
-exec --no-startup-id "xfsettingsd"
-exec --no-startup-id "nitrogen --restore"
-exec --no-startup-id "compton"
+# exec --no-startup-id "xfce4-panel --disable-wm-check"
+# exec --no-startup-id "xfsettingsd"
+# exec --no-startup-id "nitrogen --restore"
+# exec --no-startup-id "compton"
 
 exec --no-startup-id "alttab -d 1 -s 2 -t 128x128 -i 28x28"
 
 
 # Needed for i3-gaps
 for_window [class="^.*"] border pixel 2
-gaps inner 15
-gaps outer 15
+gaps inner 8
+gaps outer 8
 font pango:mono 9
 
 set $mod Mod4
-set $term alacritty
+set $term mate-terminal
 set $left h
 set $right l
 set $up k
@@ -34,6 +34,9 @@ client.focused #dbc8ff #285577 #ffffff #2e9ef4 #dbc8ff
 
 bindsym $mod+Shift+b border normal
 bindsym $mod+Shift+Ctrl+b border pixel 2
+
+# MATE specific settings
+for_window [class="Dock_applet.py" instance="dock_applet.py"] floating enable
 
 # Font for window titles. Will also be used by the bar unless a different font # is used in the bar {} block below.  font pango:monospace 8
 
@@ -57,7 +60,7 @@ bindsym $mod+Return exec $term
 
 # Gaps
 bindsym $mod+t split toggle
-bindsym $mod+Shift+t gaps inner current set 15; gaps outer current set 15
+bindsym $mod+Shift+t gaps inner current set 8; gaps outer current set 8
 bindsym $mod+s gaps inner current plus 5
 bindsym $mod+Shift+s gaps inner current minus 5
 bindsym $mod+Shift+d gaps inner current set 0; gaps outer current set 0
@@ -200,8 +203,24 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+# bar {
+#         status_command i3status
+# }
+
 bar {
-        status_command i3status
+    tray_output None
+    mode invisible
+    colors {
+        background #000000
+        statusline #ffffff
+        separator #666666
+
+        focused_workspace  #4c7899 #285577 #ffffff
+        active_workspace   #333333 #5f676a #ffffff
+        inactive_workspace #333333 #222222 #888888
+        urgent_workspace   #2f343a #900000 #ffffff
+        binding_mode       #2f343a #900000 #ffffff
+    }
 }
 
 # bar {
