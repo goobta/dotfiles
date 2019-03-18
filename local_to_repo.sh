@@ -3,14 +3,11 @@
 files=(
     ".vimrc" "vimrc"
     ".vim/UltiSnips" "vim/"
-    ".xinitrc" "xinitrc"
     ".tmux.conf" "tmux.conf"
-    ".bashrc" "bashrc"
-    ".xbindkeysrc" "xbindkeysrc"
+    ".aliases" "aliases"
     ".config/i3" "config/"
     ".config/keybindings" "config/"
     ".config/scripts" "config/"
-    ".config/qutebrowser" "config/"
 		".emacs" "emacs"
 )
 
