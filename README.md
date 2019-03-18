@@ -1,21 +1,16 @@
 # dotfiles
-My configs for my daily workflow. Tested to work on Arch linux... other
-flavors may vary!
+My configs for my daily workflow. Included are 
+* aliases
+* vimrc
+* tmux config
+* docker shortcuts
+* emacs config
+* etc
 
 ## To install
 Simply run `sh repo_to_local.sh` and let the magic happen! However, know that
-this **will overwrite** your current config, so make a backup, or reap the 
-consequences!
+this **will overwrite** your current config, so make a backup!
 
-## Included configs
-* vimrc
-* bashrc
-* i3
-* xbindkeys
-* xinitrc
-* termite
-* qutebrowser
-* UltiSnips Snippets
 
 ## Ultisnip Snipets Documentation
 ### LaTeX
