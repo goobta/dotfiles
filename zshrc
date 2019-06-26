@@ -5,9 +5,11 @@ autoload -Uz _zplugin
 
 # HISTFILE="${HOME}/.zsh_hist_file"
 
-setopt nobeep
-setopt hist_ignore_all_dups
-setopt auto_cd
+setopt nobeep                 # Disable Terminal Beeping
+setopt hist_ignore_all_dups   # Don't store dups in history
+setopt hist_reduce_blanks     # Remove superfluous blanks.
+setopt hist_save_no_dups      # Omit older commands in favor of newer ones.
+setopt auto_cd                # Don't require `cd` to change directories
 
 zplugin ice lucid
 zplugin snippet OMZ::lib/history.zsh
@@ -17,10 +19,12 @@ zplugin snippet OMZ::plugins/vi-mode/vi-mode.plugin.zsh
 
 zplugin snippet OMZ::lib/git.zsh
 zplugin snippet OMZ::plugins/git/git.plugin.zsh
-zplugin cdclear -q
+zplugin cdclear -q # Wipe git plugin completions
 
 setopt promptsubst
-zplugin snippet $HOME/.zsh-theme
+autoload -U add-zsh-hook
+
+zplugin snippet $HOME/.zsh-themes/agupta231.zsh-theme
 # zplugin snippet OMZ::themes/robbyrussell.zsh-theme
 
 zplugin ice wait"0a" lucid
@@ -38,6 +42,7 @@ zplugin snippet OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh
 zplugin ice wait"1" atinit"ZPLGM[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay" zatinit"FAST_WORK_DIRS=XDG; zpcompinit; zpcdreplay" lucid
 zplugin light zdharma/fast-syntax-highlighting
  
+# Block highlighting on tab
 zstyle ':completion:*' menu select
 
 # Aliases
