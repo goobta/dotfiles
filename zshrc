@@ -1,51 +1,49 @@
-source ~/.zplug/init.zsh
+### Added by Zplugin's installer
+source "${HOME}/.zplugin/bin/zplugin.zsh"
+autoload -Uz _zplugin
+(( ${+_comps} )) && _comps[zplugin]=_zplugin ### End of Zplugin's installer chunk
 
-zplug "plugins/git",               from:oh-my-zsh
-zplug "plugins/dircycle",          from:oh-my-zsh
-zplug "plugins/colored-man-pages", from:oh-my-zsh
-zplug "plugins/pip",               from:oh-my-zsh
-zplug "plugins/python",            from:oh-my-zsh
-zplug "plugins/docker",            from:oh-my-zsh
-zplug "plugins/vi-mode",           from:oh-my-zsh
+# HISTFILE="${HOME}/.zsh_hist_file"
 
-zplug "zsh-users/zsh-autosuggestions"
-zplug "mafredri/zsh-async", from:github, defer:0
-zplug "lib/completion", from:oh-my-zsh
-zplug "zdharma/fast-syntax-highlighting", from:github, defer:2
-zplug "zsh-users/zsh-history-substring-search", defer:3
+setopt nobeep
+setopt hist_ignore_all_dups
+setopt auto_cd
 
-zplug "themes/bira", from:oh-my-zsh, as:theme
+zplugin ice lucid
+zplugin snippet OMZ::lib/history.zsh
 
-alias ls='ls --color=auto'
-alias d='dirs -v'
+zplugin ice lucid
+zplugin snippet OMZ::plugins/vi-mode/vi-mode.plugin.zsh
 
-# Key timeout and character sequences
-KEYTIMEOUT=1
-WORDCHARS='*?_-[]~=./&;!#$%^(){}<>'
+zplugin snippet OMZ::lib/git.zsh
+zplugin snippet OMZ::plugins/git/git.plugin.zsh
+zplugin cdclear -q
 
-# History
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=$HISTSIZE
+setopt promptsubst
+zplugin snippet $HOME/.zsh-theme
+# zplugin snippet OMZ::themes/robbyrussell.zsh-theme
 
-setopt autocd                   # Allow changing directories without `cd`
-setopt append_history           # Dont overwrite history
-setopt extended_history         # Also record time and duration of commands.
-setopt share_history            # Share history between multiple shells
-setopt hist_expire_dups_first   # Clear duplicates when trimming internal hist.
-setopt hist_find_no_dups        # Dont display duplicates during searches.
-setopt hist_ignore_dups         # Ignore consecutive duplicates.
-setopt hist_ignore_all_dups     # Remember only one unique copy of the command.
-setopt hist_reduce_blanks       # Remove superfluous blanks.
-setopt hist_save_no_dups        # Omit older commands in favor of newer ones.
-setopt hist_ignore_space        # Ignore commands that start with space.
+zplugin ice wait"0a" lucid
+zplugin snippet OMZ::lib/directories.zsh
 
-# Changing directories
-setopt auto_pushd
-setopt pushd_ignore_dups        # Dont push copies of the same dir on stack.
-setopt pushd_minus              # Reference stack entries with "-".
+zplugin ice wait"0a" blockf lucid
+zplugin light zsh-users/zsh-completions
 
-setopt extended_glob
+zplugin ice wait"0a" atload"_zsh_autosuggest_start" lucid
+zplugin light zsh-users/zsh-autosuggestions
+ 
+zplugin ice wait"0c" lucid
+zplugin snippet OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh
+ 
+zplugin ice wait"1" atinit"ZPLGM[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay" zatinit"FAST_WORK_DIRS=XDG; zpcompinit; zpcdreplay" lucid
+zplugin light zdharma/fast-syntax-highlighting
+ 
+zstyle ':completion:*' menu select
 
-zplug load
+# Aliases
+source $HOME/.aliases
+ 
+# FZF / ripgrep
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
