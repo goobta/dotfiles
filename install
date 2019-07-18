@@ -7,6 +7,7 @@ ln -s $cwd/tmux.conf $HOME/.tmux.conf
 ln -s $cwd/vimrc $HOME/.vimrc
 ln -s $cwd/zshrc $HOME/.zshrc
 ln -s $cwd/zsh-themes $HOME/.zsh-themes
+ln -s $cwd/scripts $HOME/.scripts
 
 mkdir -p $HOME/.config/i3
 ln -s $cwd/i3config $HOME/.config/i3/config
