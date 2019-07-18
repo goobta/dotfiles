@@ -1,10 +1,13 @@
+#!/bin/zsh
+
 ######
 # Main ZSH theme (unironic)
 
-local host_name="%F{yellow}%n%F{default} at %F{cyan}%m"
-local path_string="%F{default}%~"
-local prompt_string=" %F{default}∴ "
+local user="%F{yellow}%n%F{default}"
+local host_name="%F{cyan}%m%F{default}"
+local path_string="%F{magenta}%~%F{default}"
+local prompt_string=" %F{default}⊨ "
 
 PROMPT="
-$host_name %F{magenta}$path_string
+{$path_string | $user ∈ $host_name}
 $prompt_string"
