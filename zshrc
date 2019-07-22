@@ -3,8 +3,6 @@ source "${HOME}/.zplugin/bin/zplugin.zsh"
 autoload -Uz _zplugin
 (( ${+_comps} )) && _comps[zplugin]=_zplugin ### End of Zplugin's installer chunk
 
-# HISTFILE="${HOME}/.zsh_hist_file"
-
 setopt nobeep                 # Disable Terminal Beeping
 setopt hist_ignore_all_dups   # Don't store dups in history
 setopt hist_reduce_blanks     # Remove superfluous blanks.
@@ -45,6 +43,8 @@ zplugin light zdharma/fast-syntax-highlighting
 # Block highlighting on tab
 zstyle ':completion:*' menu select
 
+# Disable history sharing
+unsetopt share_history
 # Aliases
 source $HOME/.aliases
  
