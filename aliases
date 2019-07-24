@@ -1,6 +1,9 @@
-# alias vim='gvim -v'
+alias vim='gvim -v'
 
 alias lambda='ssh -Y agupta@gupta-lambda.dyn.wpi.edu'
 alias elixir='ssh pi@gupta-elixir.dyn.wpi.edu'
 
 alias ls='ls --color=auto'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
