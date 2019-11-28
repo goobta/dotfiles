@@ -5,7 +5,7 @@
 ############
 
 # Configuration
-WIDTH=1386
+WIDTH=1466
 HEIGHT=1024
 MODE_NAME="mode_ipad"       # Set whatever name you like, you may need to change
                             # this when you change resolution, or just reboot.
