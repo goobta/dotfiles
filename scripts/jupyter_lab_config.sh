@@ -15,7 +15,5 @@ jupyter labextension install @jupyterlab/toc
 # Goto definition (Alt-click)
 jupyter labextension install @krassowski/jupyterlab_go_to_definition
 
-# Git support
-pip install --upgrade jupyterlab-git
 
 jupyter lab build
