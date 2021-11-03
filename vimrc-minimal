@@ -1,5 +1,6 @@
 " Shows syntax
 syntax on
+set background=dark
 
 " Show line numbering
 set number
