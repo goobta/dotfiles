@@ -13,6 +13,13 @@ def dest_filepath(repo_file_name):
     file_name = file_name[1:]
   return Path(f"~/.{file_name}").expanduser().resolve()
 
+def should_continue(message):
+  messages = message or "Continue? (y/n)"
+  if not input(messages).lower().startswith("y"):
+    print("Aborting...")
+    return False
+  return True
+
 def install_zshrc_link():
   zshrc_path = Path("~/.zshrc").expanduser()
 
@@ -30,14 +37,26 @@ def install_dotfiles():
   for dotfile in COPYABLE_DOTFILES:
     print(f" {dotfile}  -> {dest_filepath(dotfile)}")
 
-  print("Continue? (y/n)")
-  if not input().lower().startswith("y"):
-    print("Aborting...")
+  if not should_continue("Continue? (y/n)"):
     return
 
   for dotfile in COPYABLE_DOTFILES:
     print(f"Copying {dotfile} to {dest_filepath(dotfile)}")
     shutil.copy(dotfile, dest_filepath(dotfile))
+
+
+def update_dotfiles_from_local():
+  print("Updating dotfiles from local. Files to update:")
+  for dotfile in COPYABLE_DOTFILES:
+    print(f" {dest_filepath(dotfile)}  -> {dotfile}")
+
+  if not should_continue("Continue? (y/n)"):
+    return
+
+  for dotfile in COPYABLE_DOTFILES:
+    print(f"Updating {dest_filepath(dotfile)} from {dotfile}")
+    shutil.copy(dotfile, dest_filepath(dotfile))
+
 
 if __name__ == "__main__": 
   print(r'''
