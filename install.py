@@ -14,7 +14,7 @@ def dest_filepath(repo_file_name):
   return Path(f"~/.{file_name}").expanduser().resolve()
 
 def should_continue(message):
-  messages = message or "Continue? (y/n)"
+  messages = message or "Continue? (y/n): "
   if not input(messages).lower().startswith("y"):
     print("Aborting...")
     return False
@@ -37,7 +37,7 @@ def install_dotfiles():
   for dotfile in COPYABLE_DOTFILES:
     print(f" {dotfile}  -> {dest_filepath(dotfile)}")
 
-  if not should_continue("Continue? (y/n)"):
+  if not should_continue():
     return
 
   for dotfile in COPYABLE_DOTFILES:
@@ -50,7 +50,7 @@ def update_dotfiles_from_local():
   for dotfile in COPYABLE_DOTFILES:
     print(f" {dest_filepath(dotfile)}  -> {dotfile}")
 
-  if not should_continue("Continue? (y/n)"):
+  if not should_continue():
     return
 
   for dotfile in COPYABLE_DOTFILES:
@@ -71,10 +71,21 @@ if __name__ == "__main__":
 
   ''')
 
-  install_zshrc_link()
-  print()
+  options = [
+    '[i] Install remote dotfiles to local',
+    '[u] Update remote dotfiles from local',
+    '[q] Quit'
+  ]
+  tmenu = simple_term_menu.TerminalMenu(options, title="What do you want to do?")
+  choice_idx = tmenu.show()
 
-  install_dotfiles()
-  print()
+  if choice_idx == 0:
+    install_dotfiles()
+    print('Dotfiles successfully installed.')
 
-  print('Dotfiles successfully installed.')
+  elif choice_idx == 1:
+    update_dotfiles_from_local()
+    print('Dotfiles successfully updated.')
+
+  elif choice_idx == 2:
+    print("Quitting...")
