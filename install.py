@@ -5,6 +5,7 @@ import shutil
 import simple_term_menu
 
 COPYABLE_DOTFILES = glob("root/*")
+ZSHRC_SOURCE_COMMAND = "source ~/.guptarc"
 
 def dest_filepath(repo_file_name):
   file_name = Path(repo_file_name).name
@@ -13,7 +14,16 @@ def dest_filepath(repo_file_name):
   return Path(f"~/.{file_name}").expanduser().resolve()
 
 def install_zshrc_link():
-  pass
+  zshrc_path = Path("~/.zshrc").expanduser()
+
+  if zshrc_path.exists() and ZSHRC_SOURCE_COMMAND in zshrc_path.read_text():
+    print("zshrc link already installed.")
+    return
+
+  print(f"zshrc not found. Installing zshrc link to {zshrc_path}")
+  with zshrc_path.open("a") as f:
+    f.write(f"\n{ZSHRC_SOURCE_COMMAND}\n")
+
 
 def install_dotfiles():
   print("Installing dotfiles. Files to update:")
@@ -30,7 +40,22 @@ def install_dotfiles():
     shutil.copy(dotfile, dest_filepath(dotfile))
 
 if __name__ == "__main__": 
+  print(r'''
+      _       _    __ _ _
+     | |     | |  / _(_) |
+   __| | ___ | |_| |_ _| | ___  ___
+  / _` |/ _ \| __|  _| | |/ _ \/ __|
+ | (_| | (_) | |_| | | | |  __/\__ \
+  \__,_|\___/ \__|_| |_|_|\___||___/
+
+        Welcome home, Ankur.
+
+  ''')
+
+  install_zshrc_link()
   print()
+
   install_dotfiles()
   print()
+
   print('Dotfiles successfully installed.')
