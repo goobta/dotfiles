@@ -5,7 +5,7 @@ import shutil
 import simple_term_menu
 
 COPYABLE_DOTFILES = glob("root/*")
-ZSHRC_SOURCE_COMMAND = "source ~/.guptarc"
+ZSHRC_SOURCE_COMMAND = "source $HOME/.guptarc"
 
 def dest_filepath(repo_file_name):
   file_name = Path(repo_file_name).name
@@ -13,7 +13,7 @@ def dest_filepath(repo_file_name):
     file_name = file_name[1:]
   return Path(f"~/.{file_name}").expanduser().resolve()
 
-def should_continue(message):
+def should_continue(message = None):
   messages = message or "Continue? (y/n): "
   if not input(messages).lower().startswith("y"):
     print("Aborting...")

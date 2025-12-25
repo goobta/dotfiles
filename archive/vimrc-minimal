@@ -88,7 +88,7 @@ autocmd FileType tex setlocal concealcursor=" "
 " Add Google Apps script support
 autocmd BufNewFile,BufRead *.gs set filetype=javascript
 
-" Regulation tabbing for python
-autocmd FileType python set tabstop=4
-autocmd FileType python set shiftwidth=4
-autocmd FileType python set softtabstop=4
+" " Regulation tabbing for python
+" autocmd FileType python set tabstop=2
+" autocmd FileType python set shiftwidth=2
+" autocmd FileType python set softtabstop=2

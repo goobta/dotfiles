@@ -1,1 +1,93 @@
-source ~/.aliases
+" Shows syntax
+syntax on
+
+" Show line numbering
+set number
+set relativenumber
+
+" Soft wrapping
+set wrap
+set linebreak
+
+" Highlight seraches by default
+set hls
+
+" Add incremental search
+set incsearch
+
+" Make searching case insensitive by default
+set ignorecase
+set smartcase
+
+" Dabbing, wait, shit! I mean tabbing!
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+
+" Fix backspace
+set backspace=indent,eol,start
+
+" Pretty dank cursor column highlighting
+" set cursorcolumn
+
+" Wrap guide at 80 chars... psych! Welcome to the modern age, where we can now 
+" afford a whopping 100 chars!. However, diffs are nice to see side by side, so
+" the limit has just been bumped up.
+set colorcolumn=80,100
+highlight ColorColumn ctermbg=0
+
+" Forgive me lord, for I have become a pleb
+set mouse=a
+
+" Conceal settings for doers, not lookers
+set concealcursor=""
+
+" 'nuff said
+set encoding=utf-8
+
+if has('nvim') || has('termguicolors')
+  set termguicolors
+endif
+
+" Macros for windowed mode
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+map <F7> <C-w>+
+map <F8> <C-w>-
+map <F9> <C-w><
+map <F10> <C-w>>
+
+" Adding lines when in normal mode
+map <Enter> o<ESC>
+
+" Toggle folds with space bar in normal mode
+nnoremap <space> za
+
+" Surround the highlighted string
+map <Leader>9 s()<ESC>P
+map <Leader>[ s[]<ESC>P
+map <Leader>; s''<ESC>P
+map <Leader>' s""<ESC>P
+map <Leader>, s<><ESC>P
+map <Leader>d <ESC>`>x`<x
+
+" Adding support for moving up and down on wrapped lines
+map j gj
+map k gk
+
+" File specific commands
+autocmd FileType markdown setlocal spell spelllang=en_us
+autocmd FileType markdown setlocal concealcursor=" "
+
+autocmd FileType tex setlocal spell spelllang=en_us
+autocmd FileType tex setlocal concealcursor=" "
+
+" Add Google Apps script support
+autocmd BufNewFile,BufRead *.gs set filetype=javascript
+
+" " Regulation tabbing for python
+" autocmd FileType python set tabstop=2
+" autocmd FileType python set shiftwidth=2
+" autocmd FileType python set softtabstop=2
