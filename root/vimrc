@@ -2,8 +2,8 @@
 syntax on
 
 " Show line numbering
-set number
-set relativenumber
+" set number
+" set relativenumber
 
 " Soft wrapping
 set wrap
@@ -33,8 +33,8 @@ set backspace=indent,eol,start
 " Wrap guide at 80 chars... psych! Welcome to the modern age, where we can now 
 " afford a whopping 100 chars!. However, diffs are nice to see side by side, so
 " the limit has just been bumped up.
-set colorcolumn=80,100
-highlight ColorColumn ctermbg=0
+" set colorcolumn=80,100
+" highlight ColorColumn ctermbg=0
 
 " Forgive me lord, for I have become a pleb
 set mouse=a
