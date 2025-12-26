@@ -28,7 +28,7 @@ def install_zshrc_link():
     print("zshrc link already installed.")
     return
 
-  print(f"zshrc not found. Installing zshrc link to {zshrc_path}")
+  print(f"zshrc link not found. Installing zshrc link to {zshrc_path}")
   with zshrc_path.open("a") as f:
     f.write(f"\n{ZSHRC_SOURCE_COMMAND}\n")
 
@@ -44,6 +44,8 @@ def install_dotfiles():
   for dotfile in COPYABLE_DOTFILES:
     print(f"Copying {dotfile} to {dest_filepath(dotfile)}")
     shutil.copy(dotfile, dest_filepath(dotfile))
+
+  install_zshrc_link()
 
 
 def update_dotfiles_from_local():

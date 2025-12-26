@@ -1,1 +1,2 @@
-alias work="cd /Users/ankur/Documents/code/copallet"
+alias tmx="tmux -CC"
+alias ls="ls -G"
