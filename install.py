@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import argparse
 from glob import glob
 from pathlib import Path
 import shutil
@@ -58,7 +59,26 @@ def update_dotfiles_from_local():
     shutil.copy(dotfile, dest_filepath(dotfile))
 
 
-if __name__ == "__main__": 
+def interactive_menu():
+  options = [
+    '[i] Install remote dotfiles to local',
+    '[u] Update remote dotfiles from local',
+    '[q] Quit'
+  ]
+  tmenu = simple_term_menu.TerminalMenu(options, title="What do you want to do?")
+  choice_idx = tmenu.show()
+
+  if choice_idx == 0:
+    install_dotfiles()
+    print('Dotfiles successfully installed.')
+  elif choice_idx == 1:
+    update_dotfiles_from_local()
+    print('Dotfiles successfully updated.')
+  elif choice_idx == 2:
+    print("Quitting...")
+
+
+if __name__ == "__main__":
   print(r'''
       _       _    __ _ _
      | |     | |  / _(_) |
@@ -71,21 +91,16 @@ if __name__ == "__main__":
 
   ''')
 
-  options = [
-    '[i] Install remote dotfiles to local',
-    '[u] Update remote dotfiles from local',
-    '[q] Quit'
-  ]
-  tmenu = simple_term_menu.TerminalMenu(options, title="What do you want to do?")
-  choice_idx = tmenu.show()
+  parser = argparse.ArgumentParser(description="Dotfiles installer")
+  parser.add_argument("action", nargs="?", choices=["install", "update"],
+                      help="Action to perform (omit for interactive menu)")
+  args = parser.parse_args()
 
-  if choice_idx == 0:
+  if args.action == "install":
     install_dotfiles()
     print('Dotfiles successfully installed.')
-
-  elif choice_idx == 1:
+  elif args.action == "update":
     update_dotfiles_from_local()
     print('Dotfiles successfully updated.')
-
-  elif choice_idx == 2:
-    print("Quitting...")
+  else:
+    interactive_menu()

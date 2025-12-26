@@ -11,5 +11,11 @@
 all: .source-and-update-python
 	. venv-dotfiles/bin/activate && python install.py
 
-clean: 
+install: .source-and-update-python
+	. venv-dotfiles/bin/activate && python install.py install
+
+update: .source-and-update-python
+	. venv-dotfiles/bin/activate && python install.py update
+
+clean:
 	rm -rf venv-dotfiles
