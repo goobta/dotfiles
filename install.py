@@ -57,8 +57,8 @@ def update_dotfiles_from_local():
     return
 
   for dotfile in COPYABLE_DOTFILES:
-    print(f"Updating {dest_filepath(dotfile)} from {dotfile}")
-    shutil.copy(dotfile, dest_filepath(dotfile))
+    print(f"Updating {dotfile} from {dest_filepath(dotfile)}")
+    shutil.copy(dest_filepath(dotfile), dotfile)
 
 
 def interactive_menu():
