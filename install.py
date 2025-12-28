@@ -6,6 +6,7 @@ import shutil
 import simple_term_menu
 
 COPYABLE_DOTFILES = glob("root/*")
+ASSETS = glob("assets/*")
 ZSHRC_SOURCE_COMMAND = "source $HOME/.guptarc"
 
 def dest_filepath(repo_file_name):
@@ -32,9 +33,29 @@ def install_zshrc_link():
   with zshrc_path.open("a") as f:
     f.write(f"\n{ZSHRC_SOURCE_COMMAND}\n")
 
+def install_assets():
+  assets_dir = Path("~/.assets").expanduser().resolve()
+  
+  # check if .assets directory exists, if not, make it
+  if not assets_dir.exists():
+    print(f"Creating {assets_dir} directory")
+    assets_dir.mkdir(parents=True, exist_ok=True)
+  
+  # copy all files in assets/ to ~/.assets/, overwrite if exists
+  for asset in ASSETS:
+    asset_path = Path(asset)
+    dest_path = assets_dir / asset_path.name
+    print(f"Copying {asset} to {dest_path}")
+    shutil.copy(asset_path, dest_path)
 
 def install_dotfiles():
-  print("Installing dotfiles. Files to update:")
+  print("Starting dotfiles installation.")
+  install_zshrc_link()
+
+  print("Checking dotfile assets.")
+  install_assets()
+  
+  print("Files to update:")
   for dotfile in COPYABLE_DOTFILES:
     print(f" {dotfile}  -> {dest_filepath(dotfile)}")
 
@@ -44,9 +65,6 @@ def install_dotfiles():
   for dotfile in COPYABLE_DOTFILES:
     print(f"Copying {dotfile} to {dest_filepath(dotfile)}")
     shutil.copy(dotfile, dest_filepath(dotfile))
-
-  install_zshrc_link()
-
 
 def update_dotfiles_from_local():
   print("Updating dotfiles from local. Files to update:")
