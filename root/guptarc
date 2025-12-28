@@ -1,1 +1,20 @@
 source ~/.aliases
+source ~/.assets/git-prompt.sh
+
+# Function to get git branch without parentheses
+git_branch_info() {
+  local branch=$(__git_ps1 "%s")
+  if [[ -n "$branch" ]]; then
+    echo " | %F{green}${branch}%F{default}"
+  fi
+}
+
+setopt PROMPT_SUBST
+
+local user="%F{yellow}%n%F{default}"
+local path_string="%F{magenta}%~%F{default}"
+local prompt_string=" %F{default}⊨ "
+
+PROMPT=$'
+{ $user ∈ $path_string$(git_branch_info) }%{\e[$(($COLUMNS-8))G%}%F{7}%*%f
+$prompt_string'
