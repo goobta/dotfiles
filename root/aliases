@@ -1,2 +1,8 @@
 alias tmx="tmux -CC"
 alias ls="ls -G"
+
+alias plt="cd ~/Documents/workspaces"
+alias plt:copallet="cd ~/Documents/workspaces/copallet"
+alias plt:tools="cd ~/Documents/workspaces/tools"
+alias plt:pull="pushd . && plt:copallet && git pull && plt:tools && git pull && popd"
+alias plt:push="pushd . && plt:copallet && git push && plt:tools && git push && popd"
