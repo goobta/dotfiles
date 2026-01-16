@@ -417,6 +417,7 @@
     "Alpha Component" : 0.25,
     "Green Component" : 0.77217715978622437
   },
+  "Show Mark Indicators" : false,
   "Custom Directory" : "No",
   "Working Directory" : "\/Users\/ankur",
   "ASCII Anti Aliased" : true,
@@ -958,6 +959,7 @@
     "Alpha Component" : 0.25,
     "Green Component" : 0.77217715978622437
   },
+  "Show Mark Indicators" : false,
   "Custom Directory" : "No",
   "Working Directory" : "\/Users\/ankur",
   "ASCII Anti Aliased" : true,
@@ -1481,6 +1483,7 @@
     "Alpha Component" : 0.25,
     "Green Component" : 0.92047786712646484
   },
+  "Show Mark Indicators" : false,
   "Custom Directory" : "No",
   "Working Directory" : "\/Users\/ankur",
   "ASCII Anti Aliased" : true,
@@ -2011,6 +2014,7 @@
     "Alpha Component" : 0.25,
     "Green Component" : 0.77217715978622437
   },
+  "Show Mark Indicators" : false,
   "Custom Directory" : "No",
   "Working Directory" : "\/Users\/ankur",
   "ASCII Anti Aliased" : true,
@@ -2561,6 +2565,7 @@
     "Alpha Component" : 0.25,
     "Green Component" : 0.77217715978622437
   },
+  "Show Mark Indicators" : false,
   "Custom Directory" : "No",
   "Working Directory" : "\/Users\/ankur",
   "ASCII Anti Aliased" : true,
