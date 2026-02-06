@@ -13,7 +13,7 @@ setopt PROMPT_SUBST
 
 local user="%F{yellow}%n%F{default}"
 local path_string="%F{magenta}%~%F{default}"
-local prompt_string=" %F{default}⊨ "
+local prompt_string=" %F{default}⊬ "
 
 PROMPT=$'
 { $user ∈ $path_string$(git_branch_info) }%{\e[$(($COLUMNS-8))G%}%F{7}%*%f
